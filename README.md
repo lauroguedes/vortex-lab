@@ -1,4 +1,4 @@
-# Twistter — Tornado Simulation Lab
+# Vortex Lab — Tornado Simulator
 
 A real-time 3D tornado simulator that runs in the browser. Pick a real city, a tornado
 type and the atmospheric conditions, then watch the storm cross the map and survey the damage.
