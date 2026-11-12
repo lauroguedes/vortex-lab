@@ -8,6 +8,10 @@
 
 Pick a real city, choose a tornado, set the atmosphere, then watch the storm cross the map and survey what it leaves behind.
 
+### [▶ Try it live at vortex-lab.lauroguedes.dev](https://vortex-lab.lauroguedes.dev)
+
+[![Live demo](https://img.shields.io/website?url=https%3A%2F%2Fvortex-lab.lauroguedes.dev&label=live%20demo&up_message=online&down_message=offline)](https://vortex-lab.lauroguedes.dev)
+[![Cloudflare Workers](https://img.shields.io/badge/hosted%20on-Cloudflare%20Workers-F38020?logo=cloudflare&logoColor=white)](https://developers.cloudflare.com/workers/static-assets/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-2ea44f.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-7-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Three.js](https://img.shields.io/badge/three.js-r187-000000?logo=threedotjs&logoColor=white)](https://threejs.org/)
@@ -60,7 +64,7 @@ npm install
 npm run dev
 ```
 
-Then open <http://localhost:5173>. The map tiles and sound effects are included in the repository, so no API keys are needed to run it.
+Then open <http://localhost:5173>, or skip the install and use the [live version](https://vortex-lab.lauroguedes.dev). The map tiles and sound effects are included in the repository, so no API keys are needed to run it.
 
 ```bash
 npm run build      # type-check and write a production bundle to dist/
@@ -159,6 +163,7 @@ docs/images/         README images (generated)
 | `npm run build` | Type-check and build the production bundle |
 | `npm run preview` | Serve the production bundle |
 | `npm run typecheck` | Type-check only |
+| `npm run deploy` | Build and deploy to Cloudflare Workers (see [Deployment](#deployment)) |
 | `npm run fetch-cities` | Download the city tiles from OpenStreetMap (Overpass API) |
 | `npm run generate-sounds` | Generate the sound effects with ElevenLabs (needs an API key) |
 | `npm run screenshots` | Recapture the README images with headless Chrome (needs `npm run dev` running) |
@@ -196,6 +201,17 @@ npm run generate-sounds
 ```
 
 The script skips clips that already exist. Use `--force` to regenerate, `--only=siren,glass` to limit it, or `--dry` to list the work. The key is read by that script only and never reaches the browser. Without the clips, the engine falls back to synthesised wind and thunder.
+
+## Deployment
+
+The live site is a [Cloudflare Workers static-assets](https://developers.cloudflare.com/workers/static-assets/) deployment configured in [`wrangler.jsonc`](wrangler.jsonc), served on a custom domain. Cache rules for the fingerprinted bundle, map tiles and audio are in [`public/_headers`](public/_headers).
+
+```bash
+npx wrangler login    # once
+npm run deploy        # build, then upload dist/ to Cloudflare
+```
+
+To deploy your own copy, change `name` and the `routes` pattern in `wrangler.jsonc` to a domain on your Cloudflare account, or remove `routes` and set `"workers_dev": true` to use a free `*.workers.dev` address. Any static host works too: the app is plain files in `dist/` after `npm run build`.
 
 ## Performance
 

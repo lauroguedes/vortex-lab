@@ -1,0 +1,14 @@
+# Vite fingerprints everything under /assets: cache it for good
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# map tiles and sound clips change only on a redeploy
+/cities/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/audio/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

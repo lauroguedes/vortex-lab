@@ -34,7 +34,8 @@
     "typecheck": "tsc --noEmit",
     "fetch-cities": "node scripts/fetch-cities.mjs",
     "generate-sounds": "node scripts/generate-sounds.mjs",
-    "screenshots": "node scripts/capture-screenshots.mjs"
+    "screenshots": "node scripts/capture-screenshots.mjs",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "three": "^0.187.0"
@@ -42,6 +43,7 @@
   "devDependencies": {
     "@types/three": "^0.187.0",
     "typescript": "^7.0.2",
-    "vite": "^8.3.8"
+    "vite": "^8.3.8",
+    "wrangler": "^4.161.0"
   }
 }
