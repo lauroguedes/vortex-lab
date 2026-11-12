@@ -1,0 +1,121 @@
+[
+  {
+    "id": "new-york",
+    "name": "New York — Midtown Manhattan",
+    "region": "New York, USA",
+    "lat": 40.7527,
+    "lon": -73.985,
+    "kind": "Skyscraper grid",
+    "blurb": "Times Square, Bryant Park and the Empire State Building on Manhattan's street grid. Brooklyn and Queens have been hit by weak tornadoes; Midtown never has.",
+    "soil": "#5a4c40",
+    "land": "#6e6b64",
+    "trees": 0.2,
+    "heading": 55,
+    "style": "newyork",
+    "urban": true,
+    "levels": [
+      5,
+      14
+    ]
+  },
+  {
+    "id": "london",
+    "name": "London — The City",
+    "region": "England, UK",
+    "lat": 51.513,
+    "lon": -0.09,
+    "kind": "Historic core and towers",
+    "blurb": "St Paul's, the Bank towers, London Bridge and the Shard along the Thames. The UK records many small tornadoes; traffic keeps left here.",
+    "soil": "#55493c",
+    "land": "#6c6a63",
+    "trees": 0.3,
+    "heading": 70,
+    "style": "london",
+    "urban": true,
+    "left": true,
+    "levels": [
+      4,
+      8
+    ],
+    "pitched": true
+  },
+  {
+    "id": "paris",
+    "name": "Paris — Louvre and Île de la Cité",
+    "region": "Île-de-France, France",
+    "lat": 48.861,
+    "lon": 2.34,
+    "kind": "Haussmann blocks",
+    "blurb": "Six-storey stone blocks with zinc roofs on both banks of the Seine, from the Louvre to Notre-Dame.",
+    "soil": "#5c4f40",
+    "land": "#75726a",
+    "trees": 0.3,
+    "heading": 60,
+    "style": "paris",
+    "urban": true,
+    "levels": [
+      5,
+      7
+    ],
+    "pitched": true
+  },
+  {
+    "id": "rome",
+    "name": "Rome — Centro Storico",
+    "region": "Lazio, Italy",
+    "lat": 41.8955,
+    "lon": 12.483,
+    "kind": "Ancient city centre",
+    "blurb": "The Pantheon, Piazza Venezia, the Forum and the Colosseum in a maze of ochre masonry and terracotta roofs beside the Tiber.",
+    "soil": "#6a4e38",
+    "land": "#7a7468",
+    "trees": 0.3,
+    "heading": 65,
+    "style": "rome",
+    "urban": true,
+    "levels": [
+      4,
+      6
+    ],
+    "pitched": true
+  },
+  {
+    "id": "tokyo",
+    "name": "Tokyo — Shinjuku",
+    "region": "Kantō, Japan",
+    "lat": 35.6905,
+    "lon": 139.698,
+    "kind": "Towers over dense low-rise",
+    "blurb": "The skyscraper district west of Shinjuku Station surrounded by thousands of small buildings. Japan sees tornadoes most years; traffic keeps left here.",
+    "soil": "#4f463c",
+    "land": "#6d6b66",
+    "trees": 0.25,
+    "heading": 50,
+    "style": "tokyo",
+    "urban": true,
+    "left": true,
+    "levels": [
+      2,
+      6
+    ]
+  },
+  {
+    "id": "rio",
+    "name": "Rio de Janeiro — Centro",
+    "region": "Rio de Janeiro, Brazil",
+    "lat": -22.907,
+    "lon": -43.187,
+    "kind": "Tropical downtown",
+    "blurb": "Avenida Rio Branco, Lapa and Central do Brasil. South of the equator the vortex spins clockwise. The hills around the centre are flattened in this model.",
+    "soil": "#7a4a30",
+    "land": "#6f6c62",
+    "trees": 0.4,
+    "heading": 110,
+    "style": "rio",
+    "urban": true,
+    "levels": [
+      3,
+      12
+    ]
+  }
+]

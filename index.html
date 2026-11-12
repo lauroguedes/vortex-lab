@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twistter — Tornado Simulation Lab</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
+  </head>
+  <body>
+    <canvas id="view"></canvas>
+
+    <aside id="panel" class="glass">
+      <header class="brand">
+        <div class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div>
+          <h1>Twistter</h1>
+          <p>Tornado simulation lab</p>
+        </div>
+      </header>
+
+      <div class="scroll">
+        <section>
+          <h2><span>01</span>Location</h2>
+          <select id="city" aria-label="City"></select>
+          <p id="city-blurb" class="blurb"></p>
+          <dl id="city-facts" class="facts"></dl>
+        </section>
+
+        <section>
+          <h2><span>02</span>Tornado type</h2>
+          <div id="presets" class="presets" role="radiogroup" aria-label="Tornado type"></div>
+          <p id="preset-desc" class="blurb"></p>
+        </section>
+
+        <section>
+          <h2><span>03</span>Vortex</h2>
+          <label class="slider">
+            <span class="row"><b>Rotational wind</b><output id="o-vmax"></output></span>
+            <input id="s-vmax" type="range" min="25" max="135" step="1" />
+            <span class="hint" id="h-vmax"></span>
+          </label>
+          <label class="slider">
+            <span class="row"><b>Core diameter</b><output id="o-diam"></output></span>
+            <input id="s-diam" type="range" min="0" max="1000" step="1" />
+            <span class="hint">Width of the ring of strongest winds at ground level</span>
+          </label>
+          <label class="slider">
+            <span class="row"><b>Forward speed</b><output id="o-speed"></output></span>
+            <input id="s-speed" type="range" min="3" max="30" step="1" />
+          </label>
+        </section>
+
+        <section>
+          <h2><span>04</span>Track</h2>
+          <label class="slider">
+            <span class="row"><b>Heading</b><output id="o-heading"></output></span>
+            <input id="s-heading" type="range" min="0" max="355" step="5" />
+          </label>
+          <label class="slider">
+            <span class="row"><b>Track offset</b><output id="o-offset"></output></span>
+            <input id="s-offset" type="range" min="-1000" max="1000" step="20" />
+            <span class="hint">Or click the survey map to aim the track</span>
+          </label>
+        </section>
+
+        <section>
+          <h2><span>05</span>Atmosphere</h2>
+          <label class="slider">
+            <span class="row"><b>Cloud base height</b><output id="o-lcl"></output></span>
+            <input id="s-lcl" type="range" min="250" max="1600" step="10" />
+            <span class="hint" id="h-lcl"></span>
+          </label>
+          <label class="slider">
+            <span class="row"><b>Rain</b><output id="o-rain"></output></span>
+            <input id="s-rain" type="range" min="0" max="100" step="5" />
+          </label>
+          <div class="field">
+            <b>Light</b>
+            <div id="lighting" class="seg"></div>
+          </div>
+          <label class="check"><input id="c-lightning" type="checkbox" checked /> Lightning</label>
+        </section>
+
+        <section>
+          <h2><span>06</span>Detail</h2>
+          <div class="field">
+            <b>Debris</b>
+            <div id="q-debris" class="seg"></div>
+          </div>
+          <div class="field">
+            <b>Volumetrics</b>
+            <div id="q-volume" class="seg"></div>
+          </div>
+        </section>
+      </div>
+
+      <button id="run" class="primary">Run simulation</button>
+      <p class="credit">Buildings &amp; roads © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors</p>
+    </aside>
+
+    <section id="hud" class="glass" aria-live="off">
+      <div class="hud-top">
+        <div>
+          <span class="label">Elapsed</span>
+          <strong id="hud-time" class="mono">00:00</strong>
+        </div>
+        <span id="hud-phase" class="phase">Standby</span>
+      </div>
+      <div class="wind">
+        <span class="label">Peak surface wind</span>
+        <div class="wind-row">
+          <strong id="hud-wind" class="mono big">0</strong>
+          <span class="unit">km/h</span>
+          <span id="hud-ef" class="ef">—</span>
+        </div>
+        <span id="hud-wind2" class="sub mono">0 m/s · 0 mph</span>
+      </div>
+      <dl class="grid">
+        <div><dt>Core diameter</dt><dd id="hud-diam" class="mono">—</dd></div>
+        <div><dt>Forward speed</dt><dd id="hud-speed" class="mono">—</dd></div>
+        <div><dt>Pressure drop</dt><dd id="hud-press" class="mono">—</dd></div>
+        <div><dt>Wind at view target</dt><dd id="hud-probe" class="mono">—</dd></div>
+      </dl>
+      <div class="damage">
+        <span class="label">Structures damaged</span>
+        <div class="wind-row">
+          <strong id="hud-damaged" class="mono big">0</strong>
+          <span class="unit" id="hud-total">of 0</span>
+        </div>
+        <div id="hud-bars" class="bars"></div>
+      </div>
+      <dl class="grid">
+        <div><dt>Destroyed</dt><dd id="hud-destroyed" class="mono">0</dd></div>
+        <div><dt>Without power</dt><dd id="hud-power" class="mono">0</dd></div>
+        <div><dt>Trees downed</dt><dd id="hud-trees" class="mono">0</dd></div>
+        <div><dt>Vehicles thrown</dt><dd id="hud-cars" class="mono">0</dd></div>
+        <div><dt>Debris airborne</dt><dd id="hud-debris" class="mono">0</dd></div>
+        <div><dt>Frame rate</dt><dd id="hud-fps" class="mono">—</dd></div>
+      </dl>
+    </section>
+
+    <section id="map" class="glass">
+      <header><span class="label">Damage survey</span><span id="map-scale" class="sub mono"></span></header>
+      <canvas id="minimap" width="480" height="480"></canvas>
+      <div id="map-legend" class="legend"></div>
+    </section>
+
+    <footer id="transport" class="glass">
+      <button id="t-play" class="icon" title="Run / pause (Space)">▶</button>
+      <div id="t-speed" class="seg"></div>
+      <button id="t-reset" title="Reset (R)">Reset</button>
+      <span class="sep"></span>
+      <div id="t-camera" class="seg"></div>
+      <span class="sep"></span>
+      <button id="t-sound" title="Sound (M)">Sound off</button>
+      <button id="t-ui" title="Hide interface (H)">Hide UI</button>
+    </footer>
+
+    <div id="report" class="glass" hidden>
+      <span class="label">Post-storm damage survey</span>
+      <h3 id="rep-title"></h3>
+      <p id="rep-sub"></p>
+      <dl id="rep-grid" class="grid"></dl>
+      <p id="rep-worst" class="blurb"></p>
+      <div class="actions">
+        <button id="rep-close">Inspect damage</button>
+        <button id="rep-again" class="primary">Run again</button>
+      </div>
+    </div>
+
+    <div id="fp" hidden>
+      <div id="fp-vignette"></div>
+      <div id="fp-black"></div>
+      <section id="fp-read" class="glass">
+        <span id="fp-status" class="label"></span>
+        <dl class="grid">
+          <div><dt>Your speed</dt><dd id="fp-speed" class="mono">0</dd></div>
+          <div><dt>Height</dt><dd id="fp-height" class="mono">0</dd></div>
+          <div><dt>Wind on you</dt><dd id="fp-wind" class="mono">0</dd></div>
+          <div><dt>Load</dt><dd id="fp-load" class="mono">1.0 g</dd></div>
+        </dl>
+        <p id="fp-note" class="sub"></p>
+      </section>
+    </div>
+
+    <div id="loading"><div class="spinner"></div><span id="loading-text">Loading…</span></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

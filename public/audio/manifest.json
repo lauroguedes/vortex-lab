@@ -1,0 +1,76 @@
+{
+  "source": "ElevenLabs sound effects",
+  "loopModel": "eleven_text_to_sound_v2",
+  "oneShotModel": "eleven_text_to_sound_v3",
+  "groups": {
+    "roar_far": [
+      "roar_far_1.mp3"
+    ],
+    "roar_near": [
+      "roar_near_1.mp3"
+    ],
+    "wind": [
+      "wind_1.mp3"
+    ],
+    "rain": [
+      "rain_1.mp3"
+    ],
+    "debris": [
+      "debris_1.mp3"
+    ],
+    "siren": [
+      "siren_1.mp3"
+    ],
+    "siren_police": [
+      "siren_police_1.mp3"
+    ],
+    "siren_ambulance": [
+      "siren_ambulance_1.mp3"
+    ],
+    "siren_fire": [
+      "siren_fire_1.mp3"
+    ],
+    "horn": [
+      "horn_1.mp3",
+      "horn_2.mp3",
+      "horn_3.mp3"
+    ],
+    "thunder_near": [
+      "thunder_near_1.mp3",
+      "thunder_near_2.mp3",
+      "thunder_near_3.mp3"
+    ],
+    "thunder_far": [
+      "thunder_far_1.mp3",
+      "thunder_far_2.mp3"
+    ],
+    "collapse": [
+      "collapse_1.mp3",
+      "collapse_2.mp3",
+      "collapse_3.mp3"
+    ],
+    "glass": [
+      "glass_1.mp3",
+      "glass_2.mp3"
+    ],
+    "metal": [
+      "metal_1.mp3",
+      "metal_2.mp3"
+    ],
+    "vehicle": [
+      "vehicle_1.mp3",
+      "vehicle_2.mp3"
+    ],
+    "transformer": [
+      "transformer_1.mp3",
+      "transformer_2.mp3"
+    ],
+    "tree": [
+      "tree_1.mp3",
+      "tree_2.mp3"
+    ],
+    "alarm": [
+      "alarm_1.mp3"
+    ]
+  }
+}

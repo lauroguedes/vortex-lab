@@ -1,0 +1,177 @@
+{
+  ".claude/launch.json": {
+    "mtime": 1794496335.6383007,
+    "ast_hash": "6b85234ee0a1a8add56eee040ead653c",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1794505392.0673456,
+    "ast_hash": "77f460e5682428ee4d41f6d469b3d4cc",
+    "semantic_hash": ""
+  },
+  "public/cities/chicago.json": {
+    "mtime": 1794496683.1746752,
+    "ast_hash": "87fa176377e15d9938226b2b0bfefd07",
+    "semantic_hash": ""
+  },
+  "public/cities/dallas.json": {
+    "mtime": 1794496646.0112958,
+    "ast_hash": "172bb899a8cfe4a31d1f7e02fdf3246e",
+    "semantic_hash": ""
+  },
+  "public/cities/joplin.json": {
+    "mtime": 1794497174.723344,
+    "ast_hash": "28c2e1c074ae034be91f2d652a6f3225",
+    "semantic_hash": ""
+  },
+  "public/cities/moore.json": {
+    "mtime": 1794496466.828954,
+    "ast_hash": "78fdbc1819f6d0920ba75f7a14ab4656",
+    "semantic_hash": ""
+  },
+  "public/cities/nashville.json": {
+    "mtime": 1794496615.4376824,
+    "ast_hash": "60f37e8c0fc2d7e8cbb173e9c92602f1",
+    "semantic_hash": ""
+  },
+  "public/cities/oklahoma-city.json": {
+    "mtime": 1794496531.7212262,
+    "ast_hash": "5e39d4a5b1ef6d5ce71005927198aa92",
+    "semantic_hash": ""
+  },
+  "public/cities/sao-paulo.json": {
+    "mtime": 1794496720.5272264,
+    "ast_hash": "54778e383cd9277e4bc8722f80f73fe7",
+    "semantic_hash": ""
+  },
+  "public/cities/tuscaloosa.json": {
+    "mtime": 1794496579.5480735,
+    "ast_hash": "ea0e7761227a9d2a3d7f95157b4b1007",
+    "semantic_hash": ""
+  },
+  "scripts/fetch-cities.mjs": {
+    "mtime": 1794496769.7276962,
+    "ast_hash": "e67f264c6a03e555231df75359636f19",
+    "semantic_hash": ""
+  },
+  "src/audio/sound.ts": {
+    "mtime": 1794505975.481895,
+    "ast_hash": "948670c1b95ccda86b51495cc8228983",
+    "semantic_hash": ""
+  },
+  "src/data/cities.json": {
+    "mtime": 1794496769.7280824,
+    "ast_hash": "6a61ce308d37eaba91c6fe7b1e9e9bc2",
+    "semantic_hash": ""
+  },
+  "src/data/presets.ts": {
+    "mtime": 1794498183.1864133,
+    "ast_hash": "85e40522afb43bce7eb03889abefa8ef",
+    "semantic_hash": ""
+  },
+  "src/main.ts": {
+    "mtime": 1794505695.210794,
+    "ast_hash": "8b48b70ecbcfba4a84cbd847af103180",
+    "semantic_hash": ""
+  },
+  "src/physics/damage.ts": {
+    "mtime": 1794505813.3962245,
+    "ast_hash": "4a6e71471ddf44e8546bfc63d2b19635",
+    "semantic_hash": ""
+  },
+  "src/physics/debris.ts": {
+    "mtime": 1794505813.3969162,
+    "ast_hash": "021bc3398a38c9a36dd40a5f1104bb6c",
+    "semantic_hash": ""
+  },
+  "src/physics/tornado.ts": {
+    "mtime": 1794498183.1854224,
+    "ast_hash": "3e592314400f4c84407dd23eda5a1396",
+    "semantic_hash": ""
+  },
+  "src/render/environment.ts": {
+    "mtime": 1794504643.6652017,
+    "ast_hash": "4ae1bc2879b45257da74fcb505f3051f",
+    "semantic_hash": ""
+  },
+  "src/render/noise.ts": {
+    "mtime": 1794497777.7455735,
+    "ast_hash": "527a807a2f2dbecf5fd84d6a33aa9465",
+    "semantic_hash": ""
+  },
+  "src/render/pipeline.ts": {
+    "mtime": 1794504643.665857,
+    "ast_hash": "b5ed3bd0985f4ed5f1737ed0862cfb35",
+    "semantic_hash": ""
+  },
+  "src/ui/minimap.ts": {
+    "mtime": 1794497641.5426435,
+    "ast_hash": "ab8818d11df9d29e86f45e78c61e51e6",
+    "semantic_hash": ""
+  },
+  "src/ui/ui.ts": {
+    "mtime": 1794505392.0661688,
+    "ast_hash": "3604b82c857fddbdf73a96bc85dbeaca",
+    "semantic_hash": ""
+  },
+  "src/world/city.ts": {
+    "mtime": 1794505918.0317667,
+    "ast_hash": "b98c8b0782e21fdad3574a92dc6b723a",
+    "semantic_hash": ""
+  },
+  "src/world/props.ts": {
+    "mtime": 1794505504.3406906,
+    "ast_hash": "5161f6f26034daede6eecba22b4f75c7",
+    "semantic_hash": ""
+  },
+  "src/world/rain.ts": {
+    "mtime": 1794498248.5066338,
+    "ast_hash": "8aa1ab34508b191ee6ad86350780c376",
+    "semantic_hash": ""
+  },
+  "src/world/sky.ts": {
+    "mtime": 1794504643.6664445,
+    "ast_hash": "cc2378c5247a12bf045c7114eaa016e3",
+    "semantic_hash": ""
+  },
+  "tsconfig.json": {
+    "mtime": 1794496335.6328745,
+    "ast_hash": "3384a950114561e4f22b059b5479df56",
+    "semantic_hash": ""
+  },
+  "vite.config.ts": {
+    "mtime": 1794496335.6353655,
+    "ast_hash": "e5467cbf02dc92f356b1f43fc6cb2762",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1794505996.2809303,
+    "ast_hash": "41493bf9ccc27b35d8108546bb46ce9d",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1794498485.2152236,
+    "ast_hash": "377e4c0e3011274fc6d7fce98c8f22f8",
+    "semantic_hash": ""
+  },
+  "public/audio/manifest.json": {
+    "mtime": 1794505975.376146,
+    "ast_hash": "c41f4b63ea4eac47e5d666255916b9be",
+    "semantic_hash": ""
+  },
+  "scripts/generate-sounds.mjs": {
+    "mtime": 1794505953.7176347,
+    "ast_hash": "da0de5fe44fd4c67b207791601a4039c",
+    "semantic_hash": ""
+  },
+  "src/world/shapes.ts": {
+    "mtime": 1794505813.3977454,
+    "ast_hash": "bbe3f071447a124a25bc5d4e9c417b63",
+    "semantic_hash": ""
+  },
+  "src/world/street.ts": {
+    "mtime": 1794505695.2090616,
+    "ast_hash": "a1faf0ea51b1493698ce8b1ba8e7b903",
+    "semantic_hash": ""
+  }
+}
