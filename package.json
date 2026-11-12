@@ -1,15 +1,40 @@
 {
   "name": "vortex-lab",
+  "description": "Real-time 3D tornado simulator in the browser: physics-driven funnel, EF-scale damage, traffic and real city maps.",
   "private": true,
   "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lauroguedes/vortex-lab.git"
+  },
+  "homepage": "https://github.com/lauroguedes/vortex-lab#readme",
+  "bugs": {
+    "url": "https://github.com/lauroguedes/vortex-lab/issues"
+  },
+  "keywords": [
+    "tornado",
+    "simulation",
+    "threejs",
+    "webgl",
+    "typescript",
+    "vite",
+    "weather",
+    "openstreetmap",
+    "physics"
+  ],
   "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "fetch-cities": "node scripts/fetch-cities.mjs",
-    "generate-sounds": "node scripts/generate-sounds.mjs"
+    "generate-sounds": "node scripts/generate-sounds.mjs",
+    "screenshots": "node scripts/capture-screenshots.mjs"
   },
   "dependencies": {
     "three": "^0.187.0"
